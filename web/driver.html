@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ShuttleSync · Driver</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"><link rel="stylesheet" href="console.css"></head>
+<body><div class="win">
+  <div class="win-top">
+    <div class="crest-c"><img src="assets/vit-logo.png" alt="VIT logo"></div>
+    <div class="win-bar">
+      <div class="brand"><b><i></i>ShuttleSync · Driver</b></div>
+      <div class="right"><select class="ghost-select" id="shuttleSel" aria-label="Shuttle"></select><span class="pill" id="pill">On route</span>
+        <span class="nav-links"><a href="/">Student</a><a href="/admin.html">Admin</a></span></div>
+    </div>
+  </div>
+  <div class="body-grid">
+    <div class="col">
+      <div class="card cap-card"><span class="label">Onboard capacity</span><b id="capLabel">–</b><small id="capNum"></small></div>
+      <div class="card ai" id="aiCard"><span class="label">AI suggestion</span><p id="aiText">Analysing your route…</p><button class="btn sm" id="skipBtn" style="display:none;width:auto"></button></div>
+      <div class="card pl-card"><small>Pay Later boardings today</small><b id="plTotal">0 trips</b><span id="plSub"></span></div>
+      <div class="card hide" id="queue"><span class="label">Needs your confirmation</span><div id="qList" style="margin-top:6px"></div></div>
+    </div>
+    <div class="card up-card"><h3>Upcoming stops</h3><div id="stops"></div></div>
+  </div>
+</div>
+<script src="common.js"></script><script src="driver.js"></script></body></html>

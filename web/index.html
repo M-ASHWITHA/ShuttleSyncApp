@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#5b20b6">
+<title>ShuttleSync · VIT Campus Mobility</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="phone">
+
+  <!-- 1 · PERMISSIONS -->
+  <section class="screen" id="s-permissions">
+    <div class="perm">
+      <img class="crest" src="assets/vit-logo.png" alt="VIT logo">
+      <h1>ShuttleSync</h1><p>A couple of permissions before we start</p>
+      <div class="perm-card" id="pcLoc"><div class="perm-ic" data-ic="pin"></div><div style="flex:1"><b>Location</b><small>Finds the closest shuttle to you and gives accurate live ETAs.</small></div><button class="btn outline" id="allowLoc">Allow</button></div>
+      <div class="perm-card" id="pcBt"><div class="perm-ic" data-ic="bt"></div><div style="flex:1"><b>Bluetooth</b><small>Detects automatically when you're onboard a shuttle.</small></div><button class="btn outline" id="allowBt">Allow</button></div>
+      <div class="perm-note">You can change these anytime from your phone's Settings.</div>
+    </div>
+    <div class="perm-foot"><button class="btn" id="permGo">Allow &amp; Continue</button><button class="link" id="permSkip">Not now</button></div>
+  </section>
+
+  <!-- 2 · WHERE TO -->
+  <section class="screen where" id="s-where">
+    <header class="top"><div class="brand"><b><i></i>ShuttleSync</b><small>VIT Campus Mobility</small></div><img class="crest" src="assets/vit-logo.png" alt="VIT logo"></header>
+    <h2>Where to?</h2><p class="sub">Pick your stop — we'll find the closest shuttle for you.</p>
+    <div class="tiles" id="tiles"></div>
+  </section>
+
+  <!-- 3 · LIVE TRACKING -->
+  <section class="screen" id="s-live">
+    <header class="top"><div class="brand"><b><i></i>ShuttleSync</b><small>VIT Campus Mobility</small></div><img class="crest" src="assets/vit-logo.png" alt="VIT logo"></header>
+    <div class="going"><div><span class="label">Going to</span><b id="goingTo">–</b></div><button class="pill-btn" id="changeStop">Change</button></div>
+    <div class="sec"><span>Closest shuttle</span><small>Live</small></div>
+    <div id="first"></div>
+    <div class="lbl-row label" id="alsoLbl" style="display:none">Also on this route</div>
+    <div id="others"></div>
+  </section>
+
+  <!-- 4 · SHUTTLE DETAIL -->
+  <section class="screen no-nav" id="s-detail">
+    <div class="crest-row"><img class="crest" src="assets/vit-logo.png" alt="VIT logo"></div>
+    <div class="subhead"><button class="back" id="backLive" aria-label="Back"></button><div><b id="dRoute">Route</b><small id="dPath"></small></div></div>
+    <div class="prog"><div class="rail" id="rail"></div></div>
+    <div class="arr"><div><h3 id="dArr">Arriving</h3><small id="dEta"></small></div><span class="sched" id="dSched">On schedule</span></div>
+    <div class="cap"><div class="donut" id="donut"></div><div><div class="label">Capacity</div><p id="dCapTxt"></p></div></div>
+    <div class="ups"><h4>Upcoming stops</h4><div id="dUps"></div></div>
+    <div class="dock"><div class="hint" id="dHint"></div><button class="btn" id="btnWait">I'm waiting here</button><button class="btn green-outline" id="btnIn">I'm in the shuttle</button></div>
+  </section>
+
+  <!-- 5 · PAYMENT -->
+  <section class="screen" id="s-payment">
+    <header class="top title"><h1>Payment</h1><img class="crest" src="assets/vit-logo.png" alt="VIT logo"></header>
+    <div class="trip-h"><span class="label">Today's trip</span><span id="payTag"></span></div>
+    <div id="payBody"></div>
+    <p class="note" id="payNote"></p>
+  </section>
+
+  <!-- 6 · PAY LATER -->
+  <section class="screen" id="s-paylater">
+    <header class="top title"><h1>Pay Later</h1><img class="crest" src="assets/vit-logo.png" alt="VIT logo"></header>
+    <div class="trip-h"><span class="label">Marked as Pay Later</span><span id="plTag"></span></div>
+    <div id="plBody"></div>
+    <p class="note" id="plNote"></p>
+  </section>
+
+  <!-- 7 · PROFILE -->
+  <section class="screen" id="s-profile">
+    <header class="top title"><h1>Profile</h1><img class="crest" src="assets/vit-logo.png" alt="VIT logo"></header>
+    <div class="pcard"><div class="avatar" id="avatar">SN</div><div style="flex:1;min-width:0"><input class="nm" id="pfName" aria-label="Name" maxlength="40"><input class="id" id="pfId" aria-label="Student ID" maxlength="20"></div></div>
+    <div class="trip-h" style="margin-top:22px"><span class="label">Today's history</span></div>
+    <div id="hist"></div>
+  </section>
+
+  <nav class="nav hide" id="nav"><div class="bubble" id="bubble"></div><span style="display:contents" id="navBtns"></span></nav>
+</div>
+
+<div class="veil" id="veil"><div class="sheet"><h3 id="shTitle"></h3><p id="shText"></p><button class="btn" id="shGo">Go to Pay Later</button><button class="btn outline" id="shClose">Not now</button></div></div>
+
+<script src="common.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

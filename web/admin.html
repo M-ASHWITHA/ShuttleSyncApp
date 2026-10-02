@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ShuttleSync · Fleet Insights</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"><link rel="stylesheet" href="console.css"></head>
+<body><div class="win">
+  <div class="win-top">
+    <div class="crest-c"><img src="assets/vit-logo.png" alt="VIT logo"></div>
+    <div class="win-bar">
+      <div class="brand"><b><i></i>ShuttleSync · Fleet Insights</b></div>
+      <div class="right"><span>Data-driven mobility management</span><span class="nav-links"><a href="/">Student</a><a href="/driver.html">Driver</a></span></div>
+    </div>
+  </div>
+  <div class="kpis" id="kpis"></div>
+  <div class="card heat panel"><h3>Predicted demand by route and hour</h3><div class="hm" id="hm"></div></div>
+  <div class="card alerts panel" id="alertsCard" style="display:none"><span class="label">Live alerts</span><div id="alerts"></div></div>
+  <div class="two"><div class="tint p"><span class="label">Reallocation suggestion</span><p id="realloc"></p></div>
+    <div class="tint g"><span class="label">Efficiency gain</span><p id="eff"></p></div></div>
+</div>
+<script src="common.js"></script><script src="admin.js"></script></body></html>
